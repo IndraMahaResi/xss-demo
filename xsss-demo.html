@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>XSS Demo</title>
+</head>
+<body>
+  <h2>Form Komentar (Rentan XSS)</h2>
+  <form method="GET">
+    <input type="text" name="comment" placeholder="Tulis komentar di sini">
+    <button type="submit">Kirim</button>
+  </form>
+
+  <div>
+    <h3>Komentar Anda:</h3>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const comment = params.get("comment");
+      if (comment) {
+        document.write(comment); // Di sinilah celah XSS
+      }
+    </script>
+  </div>
+</body>
+</html>
